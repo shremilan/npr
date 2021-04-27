@@ -1,0 +1,12 @@
+
+@font-face {
+	font-family: 'Gnuolane Free';
+	src: url('GnuolaneFree.eot');
+	src: url('GnuolaneFree.eot?#iefix') format('embedded-opentype'),
+		url('GnuolaneFree.woff2') format('woff2'),
+		url('GnuolaneFree.woff') format('woff'),
+		url('GnuolaneFree.ttf') format('truetype'),
+		url('GnuolaneFree.svg#GnuolaneFree') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

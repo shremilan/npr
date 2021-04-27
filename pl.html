@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>HTML5 Audio Player with Playlist by Tean</title>
+       
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><!-- icons -->
+		<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css" media="all" /><!-- playlist scroll -->
+		<link rel="stylesheet" type="text/css" href="css/hap_modern2.css" />
+        
+        <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script><!-- playlist scroll -->
+        <script type="text/javascript" src="js/new_cb.js"></script>
+        <script type="text/javascript" src="js/new.js"></script>			
+        <script type="text/javascript">
+
+            var hap_player;  
+            jQuery(document).ready(function($){
+                
+                var settings = {
+                    instanceName:"modern2",
+                    sourcePath:"",
+                    activePlaylist:"playlist-audio2",
+                    activeItem:0,
+                    volume:0.5,
+                    autoPlay:true,
+                    preload:"auto",
+                    randomPlay:false,
+                    loopingOn:true,
+                    autoAdvanceToNextMedia:true,
+                    youtubeAppId:"",
+                    soundCloudAppId:"",
+                    usePlaylistScroll:true,
+                    playlistScrollOrientation:"vertical",
+                    playlistScrollTheme:"minimal",
+                    useTooltips:true,
+                    useKeyboardNavigationForPlayback:true,
+                    useDownload:false,
+                    autoReuseDownloadMail:true,
+                    useShare:true,
+                    facebookAppId:"",
+                    useNumbersInPlaylist: false,
+                    numberTitleSeparator: ".  ",
+                    artistTitleSeparator: " - ",
+                    sortableTracks: false,
+                    playlistItemContent:"title"
+                };
+
+                hap_player = $("#hap-wrapper").hap(settings);
+
+            });
+
+        </script>
+        
+	</head>
+	<body>
+
+        <div id="bg"></div>
+
+        <!-- player code -->   
+        <div id="hap-wrapper">
+
+       		<div class="hap-player-holder">
+
+                <div class="hap-player-thumb-wrapper">
+                    <div class="hap-player-thumb"></div>
+                </div>
+
+                <div class="hap-player-controls">
+                    <div class="hap-prev-toggle hap-contr-btn"><i class="fa fa-chevron-left hap-contr-btn-i hap-icon-color"></i></div>
+                    <div class="hap-playback-toggle hap-contr-btn"><i class="fa fa-play hap-contr-btn-i hap-icon-color"></i></div>
+                    <div class="hap-next-toggle hap-contr-btn"><i class="fa fa-chevron-right hap-contr-btn-i hap-icon-color"></i></div>
+                </div>
+
+              	<div class="hap-info">
+                    <p class="hap-player-artist"></p>
+                    <p class="hap-player-title"></p>
+                </div>
+
+                <div class="hap-seekbar-inner hap-tooltip-item">
+                    <div class="hap-progress-bg"></div>
+                    <div class="hap-load-level"></div>
+                    <div class="hap-progress-level"></div>
+                </div>
+
+                <div class="hap-volume-seekbar hap-vertical hap-tooltip-item">
+                    <div class="hap-volume-bg"></div>
+                    <div class="hap-volume-level"><div class="hap-volume-drag"></div></div>
+                </div>
+                  
+            </div>
+
+            <div class="hap-playlist-holder">
+
+                <div class="hap-playlist-filter-msg"><p>NOTHING FOUND!</p></div>
+
+                <div class="hap-playlist-inner">
+                    <div class="hap-playlist-content">
+                        <!-- playlist items are appended here! --> 
+                    </div>
+                </div>
+
+                <div class="hap-bottom-bar">
+                    <input class="hap-search-filter" type="text" value="filter...">
+                    <div class="hap-sort-alpha hap-tooltip-item" data-tooltip="Alphabetic sort"><i class="fa fa-sort-alpha-desc hap-sr-bar-i hap-icon-color"></i></div>
+
+                    <div class="hap-share-toggle">
+                        <div class="hap-share-holder">
+                            <div class="hap-share-item hap-contr-btn hap-tooltip-item" data-type="tumblr" data-tooltip="Share on Tumblr"><i class="fa fa-tumblr hap-sr-bar-i hap-icon-color"></i></div>
+                            <div class="hap-share-item hap-contr-btn hap-tooltip-item" data-type="twitter" data-tooltip="Share on Twitter"><i class="fa fa-twitter hap-sr-bar-i hap-icon-color"></i></div>
+                            <div class="hap-share-item hap-contr-btn hap-tooltip-item" data-type="facebook" data-tooltip="Share on Facebook"><i class="fa fa-facebook hap-sr-bar-i hap-icon-color"></i></div>
+                            <div class="hap-share-item hap-contr-btn hap-tooltip-item" data-type="googleplus" data-tooltip="Share on Google+"><i class="fa fa-google-plus hap-sr-bar-i hap-icon-color"></i></div>
+                        </div>
+                        <div class="hap-share-toggle-btn"><i class="fa fa-share-alt hap-sr-bar-i hap-icon-color"></i></div>
+                    </div>
+
+                </div>
+                
+                <div class="hap-preloader"></div>
+
+            </div>
+			
+			<div class="hap-tooltip"><p></p></div>  
+
+        </div>  
+
+        <!-- PLAYLIST LIST -->
+        <div id="hap-playlist-list">
+
+             <ul id="playlist-audio2">
+                 <li class="hap-playlist-item" data-type="audio" data-mp3="http://broadcast.radiokantipur.com:7248/stream/" data-artist="Soundroll" data-title="Kantipur" data-thumb="media/audio/1/hap_thumb2/01.jpg" data-share="http://audiojungle.net/item/a-way-to-the-top/162200?ref=Tean"></li>
+
+                 <li class="hap-playlist-item" data-type="audio" data-mp3="http://radionepal.gov.np:40100/stream" data-artist="Soundroll" data-title="Radio Nepal" data-thumb="media/audio/1/hap_thumb2/02.jpg" data-share="http://audiojungle.net/item/feel-good-journey/119565?ref=Tean"></li>
+
+                 <li class="hap-playlist-item" data-type="audio" data-mp3="media/audio/2/main/03.mp3" data-artist="Soundroll" data-title="Fight No More" data-thumb="media/audio/1/hap_thumb2/03.jpg" data-share="http://audiojungle.net/item/fight-no-more/143561?ref=Tean"></li>
+
+                 <li class="hap-playlist-item" data-type="audio" data-mp3="media/audio/2/main/04.mp3" data-artist="Soundroll" data-title="Funky Boom" data-thumb="media/audio/1/hap_thumb2/04.jpg" data-share="http://audiojungle.net/item/funky-boom/127833?ref=Tean"></li>
+
+                 <li class="hap-playlist-item" data-type="audio" data-mp3="media/audio/2/main/05.mp3" data-artist="Soundroll" data-title="Pump The Club" data-thumb="media/audio/1/hap_thumb2/05.jpg" data-share="http://audiojungle.net/item/pump-the-club/166358?ref=Tean"></li>
+
+                 <li class="hap-playlist-item" data-type="audio" data-mp3="media/audio/2/main/06.mp3" data-artist="Soundroll" data-title="Rush" data-thumb="media/audio/1/hap_thumb2/06.jpg" data-share="http://audiojungle.net/item/rush/118500?ref=Tean"></li>
+
+                 <li class="hap-playlist-item" data-type="audio" data-mp3="media/audio/2/main/07.mp3" data-artist="Soundroll" data-title="Sun Is So Bright" data-target="_blank" data-thumb="media/audio/1/hap_thumb2/07.jpg" data-share="http://audiojungle.net/item/sun-is-so-bright/134956?ref=Tean"></li>
+             </ul>
+             
+        </div>
+
+
+	</body>
+</html>
